@@ -53,8 +53,8 @@ public class ExampleTest {
         driver.findElement(By.xpath("//form[@id='form-subscribe']//input[@type='text']")).sendKeys("test@gmail.com");
         driver.findElement(By.xpath("//input[@value ='Подписаться']")).click();
 
-        WebDriverWait wait1 = new WebDriverWait(driver,10);
-        wait1.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='wrap_subscribed']"))));
+      //  WebDriverWait wait1 = new WebDriverWait(driver,10);
+      //  wait1.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='wrap_subscribed']"))));
 
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
