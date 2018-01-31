@@ -1,4 +1,4 @@
-package ua.org.mwdn.pages;
+package pagesObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,12 +15,17 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+    /*
+        @FindBy(id = "android.webkit.WebView")
+        private WebElement endUserAgreementWebView;
+     */
 
-
-/*
-    @FindBy(id = "android.webkit.WebView")
-    private WebElement endUserAgreementWebView;
- */
     @FindBy(xpath = "//*[@id=\"user_email\"]")
     public WebElement loginField;
+
+    @FindBy(xpath = "//input[@id='password']" )
+    public WebElement passField;
+
+    @FindBy(xpath = "//input[@type='submit']")
+    public WebElement submitButton;
 }
