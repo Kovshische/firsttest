@@ -1,6 +1,7 @@
 package ua.org.mwdn;
 
 import helpers.LoginPageHelper;
+import helpers.MenuHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +11,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pagesObject.LoginPage;
+import pagesObject.Menu;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -21,8 +23,9 @@ public class ExampleTest {
     public static WebDriver driver;
 
     //Pages
-     static LoginPage loginPage;
+    static LoginPage loginPage;
     public static LoginPageHelper loginPageHelper;
+    public static MenuHelper menuHelper;
 
     private static final String DRIVER_HOME_DIRECTORY = "D:\\JavaExamples\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
     //private static final String DRIVER_HOME_DIRECTORY = "C:\\qaAutomation\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
@@ -39,6 +42,7 @@ public class ExampleTest {
 
         loginPage = new LoginPage(driver);
         loginPageHelper = new LoginPageHelper(driver);
+        menuHelper = new MenuHelper(driver);
     }
 
 
@@ -81,6 +85,8 @@ public class ExampleTest {
         loginPageHelper.typeToElement(loginPage.loginField,loginPageHelper.RIGHT_EMAIL);
         loginPageHelper.typeToElement(loginPage.passField,loginPageHelper.PASSWORD);
         loginPageHelper.click(loginPage.submitButton);
+        menuHelper.isDashboardChosen();
+
     }
 
     @AfterTest
