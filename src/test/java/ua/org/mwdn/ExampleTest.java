@@ -74,15 +74,25 @@ public class ExampleTest {
 
     @Test
     public void loginTest(){
-        driver.get("http://ec2-34-198-2-13.compute-1.amazonaws.com/");
-        loginPageHelper.typeToElement(loginPage.loginField,loginPageHelper.RIGHT_EMAIL);
-        loginPageHelper.typeToElement(loginPage.passField,loginPageHelper.PASSWORD);
+        loginPageHelper.goToLoginPage();
+   //     loginPageHelper.typeToElement(loginPage.loginField,loginPageHelper.RIGHT_EMAIL);
+        loginPageHelper.typeLogin();
+        loginPageHelper.typePass();
         loginPageHelper.click(loginPage.submitButton);
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         menuHelper.isDashboardDisplayed();
         menuHelper.isDashboardChosen();
+    }
+
+    @Test
+    public void invalidLoginTest(){
+        loginPageHelper.goToLoginPage();
+        loginPageHelper.typeLogin();
+        loginPageHelper.typeIncorrectPass();
+
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
     }
 

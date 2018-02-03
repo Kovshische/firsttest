@@ -28,4 +28,7 @@ public class LoginPage {
 
     @FindBy(xpath = "//input[@type='submit']")
     public WebElement submitButton;
+
+    @FindBy(xpath = "//li[@class='error']")
+    public WebElement incorrectLoginOrPassPopup;
 }

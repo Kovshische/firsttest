@@ -5,19 +5,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Menu {
+public class Menu extends BasePage {
 
-    private final WebDriver driver;
 
     public Menu(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super(driver);
     }
 
-    @FindBy(xpath = "//li[@class='active']//a[@href='http://ec2-34-198-2-13.compute-1.amazonaws.com']")
-    public WebElement dashboardButton;
-
+    public WebElement getDashboardButton() {
+        return dashboardButton;
+    }
 
     @FindBy(xpath = "//a[@href='http://ec2-34-198-2-13.compute-1.amazonaws.com']")
-    public WebElement dashboardButton2;
+    private WebElement dashboardButton;
+
+    public WebElement getDashboardActiveButton() {
+        return dashboardActiveButton;
+    }
+
+    @FindBy(xpath = "//a[@href='http://ec2-34-198-2-13.compute-1.amazonaws.com']/ancestor::li")
+    private WebElement dashboardActiveButton;
 }
