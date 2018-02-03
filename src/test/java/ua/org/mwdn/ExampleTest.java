@@ -20,20 +20,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ExampleTest {
 
-    public static WebDriver driver;
+    static WebDriver driver;
 
     //Pages
     static LoginPage loginPage;
-    public static LoginPageHelper loginPageHelper;
-    public static MenuHelper menuHelper;
+    static LoginPageHelper loginPageHelper;
+    static MenuHelper menuHelper;
 
     private static final String DRIVER_HOME_DIRECTORY = "D:\\JavaExamples\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
     //private static final String DRIVER_HOME_DIRECTORY = "C:\\qaAutomation\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
-
-    //Loin credentials:
-    private static final String RIGHT_EMAIL = "admin@iroofing.org";
-    private static final String PASSWORD = "aPPlicasa1981aPPlosophy";
-    private static final String INCORRECT_PASSWORD = "777";
 
     @BeforeClass
     public void setDriver(){
@@ -80,11 +75,13 @@ public class ExampleTest {
     @Test
     public void loginTest(){
         driver.get("http://ec2-34-198-2-13.compute-1.amazonaws.com/");
-//        WebDriverWait wait = new WebDriverWait(driver, 5);
-//        wait.until(ExpectedConditions.visibilityOf(loginPage.loginField));
         loginPageHelper.typeToElement(loginPage.loginField,loginPageHelper.RIGHT_EMAIL);
         loginPageHelper.typeToElement(loginPage.passField,loginPageHelper.PASSWORD);
         loginPageHelper.click(loginPage.submitButton);
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        menuHelper.isDashboardDisplayed();
         menuHelper.isDashboardChosen();
 
     }
