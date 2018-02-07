@@ -10,19 +10,19 @@ public enum WebDriverFactory {
 
     CHROME {
         public WebDriver create(){
-          System.setProperty("webdriver.chrome.driver",Constant.DRIVER_HOME_DIRECTORY);
+          System.setProperty("webdriver.chrome.driver",Constant.CHROME_DRIVER_HOME_DIRECTORY);
           return new ChromeDriver();
         }
     },
     IE {
         public WebDriver create (){
-            System.setProperty("webdriver.ie.driver",Constant.DRIVER_HOME_DIRECTORY);
+            System.setProperty("webdriver.ie.driver",Constant.IE_DRIVER_HOME_DIRECTORY);
             return new InternetExplorerDriver();
         }
     },
     FIREFOX{
         public WebDriver create (){
-            System.setProperty("webdriver.firefox.marionatte",Constant.DRIVER_HOME_DIRECTORY);
+            System.setProperty("webdriver.firefox.marionatte",Constant.FIREFOX_DRIVER_HOME_DIRECTORY);
             return new FirefoxDriver();
         }
     };
