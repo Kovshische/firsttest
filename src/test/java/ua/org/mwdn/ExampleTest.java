@@ -1,7 +1,7 @@
 package ua.org.mwdn;
 
 import helpers.LoginPageHelper;
-import helpers.MenuHelper;
+//import helpers.MenuHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +25,7 @@ public class ExampleTest {
     //Pages
     static LoginPage loginPage;
     public static LoginPageHelper loginPageHelper;
-    public static MenuHelper menuHelper;
+//    public static MenuHelper menuHelper;
 
     private static final String DRIVER_HOME_DIRECTORY = "D:\\JavaExamples\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
     //private static final String DRIVER_HOME_DIRECTORY = "C:\\qaAutomation\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
@@ -40,9 +40,10 @@ public class ExampleTest {
         System.setProperty("webdriver.chrome.driver",DRIVER_HOME_DIRECTORY);
         driver = new ChromeDriver();
 
+
         loginPage = new LoginPage(driver);
         loginPageHelper = new LoginPageHelper(driver);
-        menuHelper = new MenuHelper(driver);
+  //      menuHelper = new MenuHelper(driver);
     }
 
 
@@ -85,7 +86,7 @@ public class ExampleTest {
         loginPageHelper.typeToElement(loginPage.loginField,loginPageHelper.RIGHT_EMAIL);
         loginPageHelper.typeToElement(loginPage.passField,loginPageHelper.PASSWORD);
         loginPageHelper.click(loginPage.submitButton);
-        menuHelper.isDashboardChosen();
+      //  menuHelper.isDashboardChosen();
 
     }
 
