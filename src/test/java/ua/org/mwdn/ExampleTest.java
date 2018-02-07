@@ -1,5 +1,6 @@
 package ua.org.mwdn;
 
+import configuration.WebDriverFactory;
 import helpers.LoginPageHelper;
 //import helpers.MenuHelper;
 import org.openqa.selenium.By;
@@ -37,8 +38,12 @@ public class ExampleTest {
 
     @BeforeClass
     public void setDriver(){
-        System.setProperty("webdriver.chrome.driver",DRIVER_HOME_DIRECTORY);
-        driver = new ChromeDriver();
+
+        //Without DriverFactory
+//        System.setProperty("webdriver.chrome.driver",DRIVER_HOME_DIRECTORY);
+ //       driver = new ChromeDriver();
+
+        driver = WebDriverFactory.CHROME.create();
 
 
         loginPage = new LoginPage(driver);
