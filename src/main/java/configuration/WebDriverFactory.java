@@ -22,7 +22,7 @@ public enum WebDriverFactory {
     },
     FIREFOX{
         public WebDriver create (){
-            System.setProperty("webdriver.firefox.marionatte",Constant.FIREFOX_DRIVER_HOME_DIRECTORY);
+            System.setProperty("webdriver.gecko.driver",Constant.FIREFOX_DRIVER_HOME_DIRECTORY);
             return new FirefoxDriver();
         }
     };

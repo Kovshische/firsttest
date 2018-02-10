@@ -44,6 +44,7 @@ public class ExampleTest {
 
 //        driver = WebDriverFactory.CHROME.create();
         driver = WebDriverFactory.FIREFOX.create();
+//        driver = WebDriverFactory.IE.create();
 
 
         loginPage = new LoginPage(driver);
