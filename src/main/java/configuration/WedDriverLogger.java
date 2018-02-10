@@ -1,11 +1,13 @@
 package configuration;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.WebDriverEventListener;
+
+import java.io.File;
+import java.io.IOException;
 
 public class WedDriverLogger  implements WebDriverEventListener{
 
@@ -92,6 +94,14 @@ public class WedDriverLogger  implements WebDriverEventListener{
     }
 
     public void onException(Throwable throwable, WebDriver webDriver) {
+        WebDriver driver = webDriver;
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+// Now you can do whatever you need to do with it, for example copy somewhere
+        try {
+            FileUtils.copyFile(scrFile,new File("src/main/temp/screenshort.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
