@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public enum WebDriverFactory {
 
@@ -11,19 +12,25 @@ public enum WebDriverFactory {
     CHROME {
         public WebDriver create(){
           System.setProperty("webdriver.chrome.driver",Constant.CHROME_DRIVER_HOME_DIRECTORY);
-          return new ChromeDriver();
+          EventFiringWebDriver chromeEventFiringWebDriver = new  EventFiringWebDriver(new ChromeDriver());
+          chromeEventFiringWebDriver.register(new WedDriverLogger());
+          return chromeEventFiringWebDriver;
         }
     },
     IE {
         public WebDriver create (){
             System.setProperty("webdriver.ie.driver",Constant.IE_DRIVER_HOME_DIRECTORY);
-            return new InternetExplorerDriver();
+            EventFiringWebDriver internetExplorerEventFiringWebDriver = new  EventFiringWebDriver(new InternetExplorerDriver());
+            internetExplorerEventFiringWebDriver.register(new WedDriverLogger());
+            return  internetExplorerEventFiringWebDriver;
         }
     },
     FIREFOX{
         public WebDriver create (){
             System.setProperty("webdriver.gecko.driver",Constant.FIREFOX_DRIVER_HOME_DIRECTORY);
-            return new FirefoxDriver();
+            EventFiringWebDriver fireFoxEventFiringWebDriver = new  EventFiringWebDriver(new FirefoxDriver());
+            fireFoxEventFiringWebDriver.register(new WedDriverLogger());
+            return fireFoxEventFiringWebDriver;
         }
     };
 

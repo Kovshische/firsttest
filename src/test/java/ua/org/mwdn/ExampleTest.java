@@ -30,10 +30,6 @@ public class ExampleTest {
 
     public static MenuHelper menuHelper;
 
-    private static final String DRIVER_HOME_DIRECTORY = "D:\\JavaExamples\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
-    //private static final String DRIVER_HOME_DIRECTORY = "C:\\qaAutomation\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
-
-
 
     @BeforeClass
     public void setDriver(){
@@ -109,8 +105,9 @@ public class ExampleTest {
 
     @AfterTest
     public void closeChrome(){
-        driver.close();
+//        driver.close();
         driver.quit();
+
     }
 
 }
