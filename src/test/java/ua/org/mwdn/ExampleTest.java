@@ -3,6 +3,7 @@ package ua.org.mwdn;
 import configuration.WebDriverFactory;
 import helpers.LoginPageHelper;
 //import helpers.MenuHelper;
+import helpers.MenuHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,29 +27,29 @@ public class ExampleTest {
     //Pages
     static LoginPage loginPage;
     public static LoginPageHelper loginPageHelper;
-//    public static MenuHelper menuHelper;
+
+    public static MenuHelper menuHelper;
 
     private static final String DRIVER_HOME_DIRECTORY = "D:\\JavaExamples\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
     //private static final String DRIVER_HOME_DIRECTORY = "C:\\qaAutomation\\firsttest\\src\\main\\resources\\chromedriver_win32\\chromedriver.exe";
 
-    //Loin credentials:
-    private static final String RIGHT_EMAIL = "admin@iroofing.org";
-    private static final String PASSWORD = "aPPlicasa1981aPPlosophy";
-    private static final String INCORRECT_PASSWORD = "777";
+
 
     @BeforeClass
     public void setDriver(){
 
-        //Without DriverFactory
+        // Without DriverFactory
 //        System.setProperty("webdriver.chrome.driver",DRIVER_HOME_DIRECTORY);
- //       driver = new ChromeDriver();
+//       driver = new ChromeDriver();
 
-        driver = WebDriverFactory.CHROME.create();
+//        driver = WebDriverFactory.CHROME.create();
+        driver = WebDriverFactory.FIREFOX.create();
 
 
         loginPage = new LoginPage(driver);
         loginPageHelper = new LoginPageHelper(driver);
-  //      menuHelper = new MenuHelper(driver);
+
+        menuHelper = new MenuHelper(driver);
     }
 
 
@@ -85,14 +86,24 @@ public class ExampleTest {
 
     @Test
     public void loginTest(){
-        driver.get("http://ec2-34-198-2-13.compute-1.amazonaws.com/");
+      //  driver.get("http://ec2-34-198-2-13.compute-1.amazonaws.com/");
+        loginPageHelper.goToLoginPage();
 //        WebDriverWait wait = new WebDriverWait(driver, 5);
 //        wait.until(ExpectedConditions.visibilityOf(loginPage.loginField));
-        loginPageHelper.typeToElement(loginPage.loginField,loginPageHelper.RIGHT_EMAIL);
-        loginPageHelper.typeToElement(loginPage.passField,loginPageHelper.PASSWORD);
-        loginPageHelper.click(loginPage.submitButton);
-      //  menuHelper.isDashboardChosen();
+        loginPageHelper.typeLogin();
+        loginPageHelper.typePass();
+        loginPageHelper.clickSubmitButton();
+        menuHelper.isDashboardChosen();
 
+    }
+
+    @Test
+    public void invalidLoginTest(){
+        loginPageHelper.goToLoginPage();
+        loginPageHelper.typeLogin();
+        loginPageHelper.typeIncorrectPass();
+        loginPageHelper.clickSubmitButton();
+        loginPageHelper.isIncorrectLoginPopupDisplayed();
     }
 
     @AfterTest

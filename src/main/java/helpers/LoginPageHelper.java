@@ -3,6 +3,7 @@ package helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import pagesObject.LoginPage;
 import pagesObject.Menu;
 
@@ -43,8 +44,16 @@ public class LoginPageHelper extends GeneralHelper {
     public void typePass (){
         typeToElement(loginPage.passField, PASSWORD);
     }
-
     public void typeIncorrectPass(){
         typeToElement(loginPage.passField, INCORRECT_PASSWORD);
     }
+    public void clickSubmitButton(){
+        click(loginPage.submitButton);
+    }
+    public void isIncorrectLoginPopupDisplayed(){
+        LoginPage loginPage = new LoginPage(driver);
+        Assert.assertTrue(loginPage.incorrectLoginOrPassPopup.isDisplayed());
+    }
+
+
 }
