@@ -51,7 +51,7 @@ public class ExampleTest {
 
 
 
-
+/*
     @Test(expectedExceptions = NoSuchElementException.class)
     public void testTest1(){
         driver.get("https:/ithillel.ua/");
@@ -65,13 +65,13 @@ public class ExampleTest {
 
         WebDriverWait wait1 = new WebDriverWait(driver,10);
         wait1.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='wrap_subscribed']"))));
-/*
+
         try {
             driver.wait(10, 10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-*/
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //WebElement explicitWait = new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf())
@@ -80,6 +80,7 @@ public class ExampleTest {
         assertThat("Pop up is NOT present",driver.findElement(By.xpath("//div[@class='wrap_subscribed']")).isDisplayed());
 
     }
+*/
 
     @Test
     public void loginTest(){
