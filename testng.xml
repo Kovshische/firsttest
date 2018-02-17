@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="D:\JavaExamples\firsttest\src\test\java">
+    <test verbose="2" preserve-order="true" name="D:\JavaExamples\firsttest\src\test\java\ua\org\mwdn\ExampleTest.java">
         <classes>
             <class name="ua.org.mwdn.ExampleTest">
                 <methods>
                     <include name="loginTest"/>
-                </methods>
-            </class>
-
-            <class name="ua.org.mwdn.ExampleTest">
-                <methods>
                     <include name="invalidLoginTest"/>
                 </methods>
             </class>
