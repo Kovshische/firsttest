@@ -1,22 +1,18 @@
 package ua.org.mwdn;
 
 import configuration.WebDriverFactory;
+import configuration.WebDriverFactory_old;
 import helpers.LoginPageHelper;
 //import helpers.MenuHelper;
 import helpers.MenuHelper;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pagesObject.LoginPage;
-import pagesObject.Menu;
 
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
+import java.net.MalformedURLException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -32,15 +28,18 @@ public class ExampleTest {
 
 
     @BeforeClass
-    public void setDriver(){
+    public void setDriver() throws MalformedURLException {
 
         // Without DriverFactory
 //        System.setProperty("webdriver.chrome.driver",DRIVER_HOME_DIRECTORY);
 //       driver = new ChromeDriver();
 
-//        driver = WebDriverFactory.CHROME.create();
-        driver = WebDriverFactory.FIREFOX.create();
-//        driver = WebDriverFactory.IE.create();
+//        driver = WebDriverFactory_old.CHROME.create();
+//        driver = WebDriverFactory_old.FIREFOX.create();
+//        driver = WebDriverFactory_old.IE.create();
+
+
+        driver = WebDriverFactory.getDriver(WebDriverFactory.FIREFOX).get();
 
 
         loginPage = new LoginPage(driver);
@@ -81,6 +80,7 @@ public class ExampleTest {
 
     }
 */
+
 
     @Test
     public void loginTest(){
