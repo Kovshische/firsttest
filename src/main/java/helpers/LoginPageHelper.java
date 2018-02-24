@@ -55,5 +55,11 @@ public class LoginPageHelper extends GeneralHelper {
         Assert.assertTrue(loginPage.incorrectLoginOrPassPopup.isDisplayed());
     }
 
+    public void login(){
+        goToLoginPage();
+        typeLogin();
+        typePass();
+        clickSubmitButton();
+    }
 
 }

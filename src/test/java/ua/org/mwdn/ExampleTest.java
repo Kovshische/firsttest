@@ -6,10 +6,7 @@ import helpers.LoginPageHelper;
 //import helpers.MenuHelper;
 import helpers.MenuHelper;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pagesObject.LoginPage;
 
 import java.net.MalformedURLException;
@@ -23,11 +20,10 @@ public class ExampleTest {
     //Pages
     static LoginPage loginPage;
     public static LoginPageHelper loginPageHelper;
-
     public static MenuHelper menuHelper;
 
 
-    @BeforeClass
+    @BeforeMethod
     public void setDriver() throws MalformedURLException {
 
         // Without DriverFactory
@@ -103,10 +99,12 @@ public class ExampleTest {
         loginPageHelper.isIncorrectLoginPopupDisplayed();
     }
 
-    @AfterTest
+
+
+    @AfterMethod
     public void closeChrome(){
-        driver.close();
         driver.quit();
+ //       driver.close();
 
     }
 
