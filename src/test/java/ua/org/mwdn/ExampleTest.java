@@ -39,12 +39,11 @@ public class ExampleTest {
 //        driver = WebDriverFactory_old.IE.create();
 
 
-        driver = WebDriverFactory.getDriver(WebDriverFactory.FIREFOX).get();
+        driver = WebDriverFactory.getDriver(WebDriverFactory.CHROME).get();
 
 
         loginPage = new LoginPage(driver);
         loginPageHelper = new LoginPageHelper(driver);
-
         menuHelper = new MenuHelper(driver);
     }
 
@@ -106,7 +105,7 @@ public class ExampleTest {
 
     @AfterTest
     public void closeChrome(){
-//        driver.close();
+        driver.close();
         driver.quit();
 
     }

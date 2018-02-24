@@ -5,9 +5,9 @@
         <classes>
             <class name="ua.org.mwdn.ExampleTest">
                 <methods>
-
-                    <include name="invalidLoginTest"/>
                     <include name="loginTest"/>
+                    <include name="invalidLoginTest"/>
+
                 </methods>
             </class>
         </classes>
