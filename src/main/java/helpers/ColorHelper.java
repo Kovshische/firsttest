@@ -68,6 +68,16 @@ public class ColorHelper extends GeneralHelper {
         click(rightColorWebElement);
     }
 
+    public int getScore(){
+        int scoreInt = 0;
+        String scoreString;
+
+        scoreString = colorTestPage.getScoreField().getText();
+        scoreInt = Integer.parseInt(scoreString);
+        log.info(scoreString);
+        return scoreInt;
+    }
+
 
 
 

@@ -30,16 +30,23 @@ public class ColorTest {
 
     @Test
     public void test1000Score() throws InterruptedException {
+        int score = 0;
+        int targetScore = 1000;
+
         colorHelper.goToMainPage();
         colorHelper.waitUntilStartButtonPresent();
         colorHelper.pressStartButton();
-        String rightColor = colorHelper.getTargetColor();
-        colorHelper.clickOnRightColor(rightColor);
+
+        while (score < targetScore){
+            String rightColor = colorHelper.getTargetColor();
+            colorHelper.clickOnRightColor(rightColor);
+            score = colorHelper.getScore();
+        }
     }
 
     @AfterMethod
     public void closeChrome(){
-        driver.quit();
+//        driver.quit();
     }
 
 
