@@ -10,6 +10,18 @@
 
                 </methods>
             </class>
+
         </classes>
     </test>
+
+    <test verbose="2" thread-count="1" preserve-order="true" name="D:\JavaExamples\firsttest\src\test\java\ua\org\mwdn\ColorTest.java">
+        <classes>
+            <class name="ua.org.mwdn.ColorTest">
+                <methods>
+                    <include name="test1000Score"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite>

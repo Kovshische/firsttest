@@ -7,6 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Menu extends BasePage {
 
+//#kolor-options > li:nth-child(1) > a
+    // //*[@id="kolor-options"]/li[1]/a
+
+
 
     public Menu(WebDriver driver) {
         super(driver);
