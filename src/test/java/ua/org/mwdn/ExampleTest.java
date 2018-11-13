@@ -16,7 +16,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ExampleTest {
 
     public static WebDriver driver;
-
+/*
+    public ExampleTest (WebDriver driver){
+        this.driver = driver;
+    }
+*/
     //Pages
     static LoginPage loginPage;
     public static LoginPageHelper loginPageHelper;

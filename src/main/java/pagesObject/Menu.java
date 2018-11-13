@@ -16,17 +16,26 @@ public class Menu extends BasePage {
         super(driver);
     }
 
+    //Dashboard Button
     public WebElement getDashboardButton() {
         return dashboardButton;
     }
-
     @FindBy(xpath = "//a[@href='http://ec2-34-198-2-13.compute-1.amazonaws.com']")
     private WebElement dashboardButton;
 
     public WebElement getDashboardActiveButton() {
         return dashboardActiveButton;
     }
-
     @FindBy(xpath = "//a[@href='http://ec2-34-198-2-13.compute-1.amazonaws.com']/ancestor::li")
     private WebElement dashboardActiveButton;
+
+
+    //Contractor Button
+    public WebElement getContractorButton(){
+        return contractorButton;
+    }
+    @FindBy(xpath = "")
+    private WebElement contractorButton;
+
+
 }

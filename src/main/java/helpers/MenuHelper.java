@@ -24,7 +24,6 @@ public class MenuHelper {
 
     public void isDashboardDisplayed() {
         Menu menu = new Menu(driver);
-
         Assert.assertTrue(menu.getDashboardButton().isDisplayed());
     }
 

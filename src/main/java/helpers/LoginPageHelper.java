@@ -50,6 +50,7 @@ public class LoginPageHelper extends GeneralHelper {
     public void clickSubmitButton(){
         click(loginPage.submitButton);
     }
+
     public void isIncorrectLoginPopupDisplayed(){
         LoginPage loginPage = new LoginPage(driver);
         Assert.assertTrue(loginPage.incorrectLoginOrPassPopup.isDisplayed());

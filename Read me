@@ -1,0 +1,5 @@
+before start test:
+ 1. Start file "start_hub.but"
+ (C:\Work\IRoofing\BackendTestingProject\firsttest\src\main\resources\seleniumGrid)
+ 2. Start necessary browser .but file from this folder:
+ (C:\Work\IRoofing\BackendTestingProject\firsttest\src\main\resources\seleniumGrid)

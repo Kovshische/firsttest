@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 
 public class GeneralHelper {
 
+    public static final String DOMAIN =  "http://ec2-34-235-10-165.compute-1.amazonaws.com";
+    public static final String MANUFACTURER =  "/10052";
+
     private final WebDriver driver;
 
     public GeneralHelper(WebDriver driver) {
