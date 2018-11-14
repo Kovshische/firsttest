@@ -3,3 +3,4 @@ before start test:
  (C:\Work\IRoofing\BackendTestingProject\firsttest\src\main\resources\seleniumGrid)
  2. Start necessary browser .but file from this folder:
  (C:\Work\IRoofing\BackendTestingProject\firsttest\src\main\resources\seleniumGrid)
+ 3. You can check hub here: http://localhost:4444/grid/console

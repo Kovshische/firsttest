@@ -16,7 +16,7 @@ public class LoginPageHelper extends GeneralHelper {
     public static final String EMAIL = "admin@iroofing.org";
     public static final String PASSWORD = "AppliCASA1999iRoofing2012";
     private static final String INCORRECT_PASSWORD = "777";
-    private static final String LOGIN_PAGE_ADDRESS = "http://ec2-34-198-2-13.compute-1.amazonaws.com/";
+    private static final String LOGIN_PAGE_ADDRESS = "http://ec2-34-235-10-165.compute-1.amazonaws.com/";
 
     public LoginPageHelper(WebDriver driver){
         super(driver);

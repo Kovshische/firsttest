@@ -16,30 +16,32 @@ import java.net.MalformedURLException;
  */
 public class Products {
 
+
     public static WebDriver driver;
 
     public static ProductsPageHelper productsPageHelper;
-    public static LoginPageHelper loginPageHelper;
-    public static ExampleTest exampleTest;
+//    public static LoginPageHelper loginPageHelper;
+//    public static ExampleTest exampleTest;
 
     @BeforeMethod
     public void setDriver() throws MalformedURLException {
         driver = WebDriverFactory.getDriver(WebDriverFactory.CHROME).get();
         productsPageHelper = new ProductsPageHelper(driver);
-        loginPageHelper = new LoginPageHelper(driver);
+//        loginPageHelper = new LoginPageHelper(driver);
 //        exampleTest = new ExampleTest(driver);
     }
 
     @Test
-    public void addNewProduct(){
-        exampleTest.loginTest();
+    public void addNewProduct() throws MalformedURLException {
+
+        ExampleTest.login(driver);
         productsPageHelper.goToProductsPage();
         productsPageHelper.clickCreateNewProductButton();
     }
 
     @AfterMethod
     public void closeChrome() {
- //       driver.quit();
+        driver.quit();
     }
 
 }

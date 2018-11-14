@@ -33,6 +33,7 @@ public class WebDriverFactory {
         else if (CHROME.equalsIgnoreCase(name)){
             System.setProperty("webdriver.chrome.driver",Constant.CHROME_DRIVER_HOME_DIRECTORY);
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+
             EventFiringWebDriver chromeEventFiringWebDriver = new  EventFiringWebDriver(new RemoteWebDriver(new URL(HUB), capabilities));
             chromeEventFiringWebDriver.register(new WedDriverLogger());
             DRIVER_THREAD_LOCAL.set(chromeEventFiringWebDriver);

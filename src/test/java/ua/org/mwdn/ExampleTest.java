@@ -16,11 +16,13 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ExampleTest {
 
     public static WebDriver driver;
-/*
+
+    /*
     public ExampleTest (WebDriver driver){
         this.driver = driver;
     }
-*/
+    */
+
     //Pages
     static LoginPage loginPage;
     public static LoginPageHelper loginPageHelper;
@@ -110,6 +112,20 @@ public class ExampleTest {
         driver.quit();
  //       driver.close();
 
+    }
+
+    public static void login(WebDriver driver) throws MalformedURLException {
+
+//        WebDriver driver1 = driver;
+
+        loginPage = new LoginPage(driver);
+        loginPageHelper = new LoginPageHelper(driver);
+        menuHelper = new MenuHelper(driver);
+
+        loginPageHelper.goToLoginPage();
+        loginPageHelper.typeLogin();
+        loginPageHelper.typePass();
+        loginPageHelper.clickSubmitButton();
     }
 
 }

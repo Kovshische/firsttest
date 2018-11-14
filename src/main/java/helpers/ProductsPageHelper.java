@@ -21,8 +21,11 @@ public class ProductsPageHelper extends GeneralHelper {
         productsPage = new ProductsPage(driver);
     }
 
+
     public void goToProductsPage (){
-        driver.get(PRODUCTS_PAGE_ADDRESS);
+//        driver.get(PRODUCTS_PAGE_ADDRESS);
+        driver.get("http://ec2-34-235-10-165.compute-1.amazonaws.com/10051/Products");
+
     }
 
     public void clickCreateNewProductButton(){
