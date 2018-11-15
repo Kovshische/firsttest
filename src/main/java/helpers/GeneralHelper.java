@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 public class GeneralHelper {
 
     public static final String DOMAIN =  "http://ec2-34-235-10-165.compute-1.amazonaws.com";
-    public static final String MANUFACTURER =  "/10052";
+    public static final String MANUFACTURER_ID =  "/10052";
+
 
     private final WebDriver driver;
 
@@ -20,5 +21,10 @@ public class GeneralHelper {
 
     public static void click (WebElement element){
         element.click();
+    }
+
+    public static void chooseFromDropBox (WebElement elementDropBox, WebElement elementToChose){
+        elementDropBox.click();
+        elementToChose.click();
     }
 }

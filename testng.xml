@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" thread-count="1" preserve-order="true" name="D:\JavaExamples\firsttest\src\test\java\ua\org\mwdn\ExampleTest.java">
         <classes>
-            <class name="ua.org.mwdn.ExampleTest">
+            <class name="ua.org.mwdn.LoginTest">
                 <methods>
                     <include name="loginTest"/>
                     <include name="invalidLoginTest"/>

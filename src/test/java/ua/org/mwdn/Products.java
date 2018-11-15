@@ -1,13 +1,12 @@
 package ua.org.mwdn;
 
 import configuration.WebDriverFactory;
-import helpers.LoginPageHelper;
-import helpers.ProductsPageHelper;
+import helpers.products.CreateProductPageHelper;
+import helpers.products.ProductsPageHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pagesObject.ProductsPage;
 
 import java.net.MalformedURLException;
 
@@ -20,23 +19,23 @@ public class Products {
     public static WebDriver driver;
 
     public static ProductsPageHelper productsPageHelper;
-//    public static LoginPageHelper loginPageHelper;
-//    public static ExampleTest exampleTest;
+    public static CreateProductPageHelper createProductPageHelper;
 
     @BeforeMethod
     public void setDriver() throws MalformedURLException {
         driver = WebDriverFactory.getDriver(WebDriverFactory.CHROME).get();
         productsPageHelper = new ProductsPageHelper(driver);
-//        loginPageHelper = new LoginPageHelper(driver);
-//        exampleTest = new ExampleTest(driver);
+        createProductPageHelper = new CreateProductPageHelper(driver);
+
     }
 
     @Test
     public void addNewProduct() throws MalformedURLException {
-
-        ExampleTest.login(driver);
+        LoginTest.login(driver);
         productsPageHelper.goToProductsPage();
         productsPageHelper.clickCreateNewProductButton();
+        createProductPageHelper.setName();
+        createProductPageHelper.setShape();
     }
 
     @AfterMethod
