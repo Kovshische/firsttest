@@ -1,5 +1,6 @@
 package helpers.products;
 
+import helpers.Environment;
 import helpers.GeneralHelper;
 import org.openqa.selenium.WebDriver;
 import pagesObject.Products.ProductsPage;
@@ -7,10 +8,10 @@ import pagesObject.Products.ProductsPage;
 /**
  * Created by admin on 11/13/2018.
  */
-public class ProductsPageHelper extends GeneralHelper {
+public class ProductsPageHelper extends GeneralHelper implements Environment{
 
-    private static final String PRODUCTS_PAGE = "/Products";
-    private static final String PRODUCTS_PAGE_ADDRESS = GeneralHelper.DOMAIN.concat(GeneralHelper.MANUFACTURER_ID).concat(PRODUCTS_PAGE);
+
+    private static final String PRODUCTS_PAGE_ADDRESS = GeneralHelper.DOMAIN.concat(GeneralHelper.TEST_MANUFACTURER_ID).concat(PRODUCTS_PAGE);
 
     public WebDriver driver;
     private ProductsPage productsPage;
