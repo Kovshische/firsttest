@@ -9,7 +9,8 @@ public interface Environment {
     public final String PRODUCTS_PAGE = "/Products";
     public final String SHAPES_PAGE = "/Shapes";
 
-    public final String IMAGE_URL = "C:\\Work\\IRoofing\\BackendTestingProject\\firsttest\\src\\main\\resources";
+//    public final String IMAGE_URL = "C:\\Work\\IRoofing\\BackendTestingProject\\firsttest\\src\\main\\resources\\Image.jpg";
+    public final String IMAGE_URL = "src\\main\\resources\\Image.jpg";
 
     //Initial environment
     public static final String SHAPE_ID = "1534";

@@ -26,8 +26,4 @@ public class GeneralHelper implements Environment {
         element.sendKeys(string);
     }
 
-    public static void chooseFromDropBox (WebElement elementDropBox, WebElement elementToChose){
-        elementDropBox.click();
-        elementToChose.click();
-    }
 }

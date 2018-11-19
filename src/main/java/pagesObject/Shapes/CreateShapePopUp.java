@@ -24,7 +24,8 @@ public class CreateShapePopUp {
     public WebElement shapeNameField;
 
     // //div[@class='image-rectangular']
-    @FindBy(xpath = "//div[@class='image-rectangular']")
+    // //div[@class='image image-block']//div[@class='fileWrapper']
+    @FindBy(xpath = "//div[@class='image image-block']//div[@class='fileWrapper']/input")
     public WebElement uploadImageButton;
 
     // //input[@class='btn btn-primary']
