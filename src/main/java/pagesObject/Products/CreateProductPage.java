@@ -32,7 +32,7 @@ public class CreateProductPage implements Environment {
 
     //Test Shape
     // //div[@class='col-md-8']/select[@class='form-control chosen-select']/option[@value='1534']
-    @FindBy(xpath = "//div[@class='col-md-8']/select[@class='form-control chosen-select']/option[@value='" + SHAPE_ID + "']")
+    @FindBy(xpath = "//div[@class='col-md-8']/select[@class='form-control chosen-select']/option[@value='" + DEFAULT_SHAPE_ID + "']")
     public WebElement shapeTest;
 
 

@@ -9,14 +9,17 @@ public interface Environment {
     public final String PRODUCTS_PAGE = "/Products";
     public final String SHAPES_PAGE = "/Shapes";
 
-//    public final String IMAGE_URL = "C:\\Work\\IRoofing\\BackendTestingProject\\firsttest\\src\\main\\resources\\Image.jpg";
-    public final String IMAGE_URL = "src\\main\\resources\\Image.jpg";
+    public final String IMAGE_URL = "C:\\Work\\IRoofing\\BackendTestingProject\\firsttest\\src\\main\\resources\\Image.jpg";
+//    public final String IMAGE_URL = "src/main/resources/Image.jpg";
 
     //Initial environment
-    public static final String SHAPE_ID = "1534";
-    public static final String SHAPE_NAME = "Test Shape";
+    public static final String DEFAULT_SHAPE_ID = "1534";
+    public static final String DEFAULT_SHAPE_NAME = "Test Shape";
 
-    public static final String TEST_MANUFACTURER_ID =  "/10052";
+    public static final String TEST_SHAPE_NAME = "AutoTestShape";
+
+    public static final String DEFAULT_TEST_MANUFACTURER_ID =  "/10052";
+
 
 
 

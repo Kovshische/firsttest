@@ -11,7 +11,7 @@ import pagesObject.Products.ProductsPage;
 public class ProductsPageHelper extends GeneralHelper implements Environment{
 
 
-    private static final String PRODUCTS_PAGE_ADDRESS = GeneralHelper.DOMAIN.concat(GeneralHelper.TEST_MANUFACTURER_ID).concat(PRODUCTS_PAGE);
+    private static final String PRODUCTS_PAGE_ADDRESS = GeneralHelper.DOMAIN.concat(GeneralHelper.DEFAULT_TEST_MANUFACTURER_ID).concat(PRODUCTS_PAGE);
 
     public WebDriver driver;
     private ProductsPage productsPage;

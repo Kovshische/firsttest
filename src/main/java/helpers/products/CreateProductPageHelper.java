@@ -26,6 +26,6 @@ public class CreateProductPageHelper extends GeneralHelper implements Environmen
     }
     public void setShape(){
         click(createProductPage.shapeDropdownList);
-        typeToElement(createProductPage.shapeSearchField, SHAPE_NAME);
+        typeToElement(createProductPage.shapeSearchField, DEFAULT_SHAPE_NAME);
     }
 }

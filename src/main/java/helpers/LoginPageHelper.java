@@ -52,7 +52,7 @@ public class LoginPageHelper extends GeneralHelper {
     }
 
     public void isIncorrectLoginPopupDisplayed(){
-        LoginPage loginPage = new LoginPage(driver);
+//        LoginPage loginPage = new LoginPage(driver);
         Assert.assertTrue(loginPage.incorrectLoginOrPassPopup.isDisplayed());
     }
 

@@ -23,7 +23,6 @@ public class ShapeTest implements Environment {
     public static ShapesPageHelper shapesPageHelper;
     public static ProductsPageHelper productsPageHelper;
 
-    private static final String SHAPE_NAME = "AutoTestShape";
 
     @BeforeMethod
     public void setDriver() throws MalformedURLException {
@@ -39,8 +38,10 @@ public class ShapeTest implements Environment {
         shapesPageHelper.goToTestShapesPage();
         shapesPageHelper.clickCreateNewShapeButton();
         shapesPageHelper.waitUntilPopupCreateBeVisible();
-        shapesPageHelper.setShapeName(SHAPE_NAME);
+        shapesPageHelper.setShapeName(TEST_SHAPE_NAME);
         shapesPageHelper.loadImage(IMAGE_URL);
+        shapesPageHelper.clickSaveChangesButton();
+        shapesPageHelper.isTestShapePresent();
 
     }
 
