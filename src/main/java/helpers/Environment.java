@@ -14,9 +14,10 @@ public interface Environment {
 
     //Initial environment
     public static final String DEFAULT_SHAPE_ID = "1534";
-    public static final String DEFAULT_SHAPE_NAME = "Test Shape";
+    public static final String DEFAULT_SHAPE_NAME = "Default Shape";
 
-    public static final String TEST_SHAPE_NAME = "AutoTestShape";
+    public static final String AUTO_TEST_SHAPE_NAME = "AutoTestShape";
+    public static final String AUTO_TEST_MODIFIED_SHAPE_NAME = "AutoTestModifiedShape";
 
     public static final String DEFAULT_TEST_MANUFACTURER_ID =  "/10052";
 

@@ -28,4 +28,6 @@ public class ProductsPage {
     // //form[@name='searchFilter']/input[@type='submit']
     @FindBy(xpath = "//form[@name='searchFilter']/input[@type='submit']")
     public WebElement searchButton;
+
+
 }
