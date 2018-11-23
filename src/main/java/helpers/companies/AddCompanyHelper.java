@@ -45,7 +45,7 @@ public class AddCompanyHelper extends GeneralHelper {
 
     //Click buttons
     public void clickSaveChangesButton(){
-        click(addCompanyPage.saveChangesButton);
+        moveAndClick(addCompanyPage.saveChangesButton);
     }
 
 }

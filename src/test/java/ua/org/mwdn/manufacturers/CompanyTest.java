@@ -36,25 +36,18 @@ public class CompanyTest extends BaseTest implements Environment {
     public void addCompany(String companyType) {
         goToCompanyPage(companyType);
         companyHelper.clickAddNewCompany();
-        switch (companyType) {
-            case CONTRACTORS:
-                addCompanyHelper.setCompanyName(CONTRACTOR_TEST_NAME);
-                break;
-            case DISTRIBUTORS:
-                addCompanyHelper.setCompanyName(DISTRIBUTOR_TEST_NAME);
-                break;
-            case MANUFACTURERS:
-                addCompanyHelper.setCompanyName(MANUFACTURER_TEST_NAME);
-                break;
-        }
+        setCompanyName(companyType);
         addCompanyHelper.uploadCompanyLogo(IMAGE_URL);
+        addCompanyHelper.clickSaveChangesButton();
     }
 
     public void editCompany (String companyType){
         goToCompanyPage(companyType);
-        
+        setCompanyNameInSearchField(companyType);
     }
 
+
+    //help methods
     private void goToCompanyPage(String companyType){
         switch (companyType) {
             case CONTRACTORS:
@@ -68,4 +61,35 @@ public class CompanyTest extends BaseTest implements Environment {
                 break;
         }
     }
+
+    private void setCompanyName(String companyType){
+        switch (companyType) {
+            case CONTRACTORS:
+                addCompanyHelper.setCompanyName(CONTRACTOR_TEST_NAME);
+                break;
+            case DISTRIBUTORS:
+                addCompanyHelper.setCompanyName(DISTRIBUTOR_TEST_NAME);
+                break;
+            case MANUFACTURERS:
+                addCompanyHelper.setCompanyName(MANUFACTURER_TEST_NAME);
+                break;
+        }
+    }
+
+
+    private void setCompanyNameInSearchField(String companyType){
+        switch (companyType) {
+            case CONTRACTORS:
+                companyHelper.setTextInSearchField(CONTRACTOR_TEST_NAME);
+                break;
+            case DISTRIBUTORS:
+                companyHelper.setTextInSearchField(DISTRIBUTOR_TEST_NAME);
+                break;
+            case MANUFACTURERS:
+                companyHelper.setTextInSearchField(MANUFACTURER_TEST_NAME);
+                break;
+        }
+    }
+
+
 }

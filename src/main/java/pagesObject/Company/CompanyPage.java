@@ -17,6 +17,15 @@ public class CompanyPage {
         this.driver = driver;
     }
 
+    //Buttons
     @FindBy(xpath = "//i[@class='btn-add-new fa icon-medical-symbol-fill']")
     public WebElement addCompanyButton;
+
+    @FindBy(xpath = "//div[@class='tableOptions']//input[@class='btn btn-primary']")
+    public WebElement searchButton;
+
+
+    //Text fields
+    @FindBy(xpath = "//div[@class='tableOptions']//input[@id='search']")
+    public WebElement searchField;
 }

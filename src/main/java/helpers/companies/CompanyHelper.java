@@ -27,7 +27,16 @@ public class CompanyHelper extends GeneralHelper {
 
     }
 
+    //Click buttons
     public void clickAddNewCompany(){
         click(companyPage.addCompanyButton);
+    }
+    public void clickSearchButton(){
+        click(companyPage.searchButton);
+    }
+
+    //set text
+    public void setTextInSearchField (String string){
+        sendKeys(companyPage.searchField, string);
     }
 }

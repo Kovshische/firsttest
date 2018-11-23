@@ -18,6 +18,7 @@ public class GeneralHelper implements Environment {
     public GeneralHelper(WebDriver driver) {
         this.driver = driver;
         this.webDriverWait = new WebDriverWait(driver, 10);
+        this.actions = new Actions(driver);
     }
 
 
@@ -36,9 +37,8 @@ public class GeneralHelper implements Environment {
     }
 
     public void moveAndClick (WebElement element){
-        actions.moveToElement(element);
-        actions.perform();
-        element.click();
+//       actions = new Actions(driver);
+       actions.moveToElement(element).click().perform();
     }
 
     public static void isElementPresent(WebElement element){
