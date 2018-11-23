@@ -1,14 +1,18 @@
 package helpers;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class GeneralHelper implements Environment {
 
     private final WebDriver driver;
     private WebDriverWait webDriverWait;
+    private Actions actions;
 
 
     public GeneralHelper(WebDriver driver) {
@@ -28,8 +32,17 @@ public class GeneralHelper implements Environment {
     }
 
     public  void waitUntilElementPresent (WebElement element){
-        // webDriverWait.until(ExpectedConditions.visibilityOf(createShapePopUp.shapeNameField));
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void moveAndClick (WebElement element){
+        actions.moveToElement(element);
+        actions.perform();
+        element.click();
+    }
+
+    public static void isElementPresent(WebElement element){
+        Assert.assertTrue(element.isDisplayed());
     }
 
     public static void sendKeys (WebElement element, String string){
