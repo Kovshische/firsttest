@@ -18,7 +18,7 @@ public interface Environment {
     public static final String ADD_MANUFACTURER_PAGE = "/Manufacturers/create";
 
 
-    public final String IMAGE_URL = "C:\\Work\\IRoofing\\BackendTestingProject\\firsttest\\src\\main\\resources\\Image.jpg";
+    public final String IMAGE_URL = "D:\\Work\\IRoofing\\BackendTestingProject\\firsttest\\src\\main\\resources\\Image.jpg";
 //    public final String IMAGE_URL = "src/main/resources/Image.jpg";
 
     //Initial environment
