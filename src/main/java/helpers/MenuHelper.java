@@ -16,7 +16,6 @@ public class MenuHelper {
 
     public void isDashboardChosen() {
         Menu menu = new Menu(driver);
-
         final String attribute = menu.getDashboardActiveButton().getAttribute("class");
         Assert.assertTrue(attribute.equals("active"));
     }

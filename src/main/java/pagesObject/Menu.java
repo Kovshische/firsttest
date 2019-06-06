@@ -20,15 +20,19 @@ public class Menu extends BasePage {
     public WebElement getDashboardButton() {
         return dashboardButton;
     }
-    @FindBy(xpath = "//a[@href='http://ec2-34-198-2-13.compute-1.amazonaws.com']")
+
+    @FindBy(xpath = "//a[@href='http://ec2-34-235-10-165.compute-1.amazonaws.com']")
     private WebElement dashboardButton;
+
+
+
+//    @FindBy(xpath = "//a[@href='http://ec2-34-235-10-165.compute-1.amazonaws.com']")
+    @FindBy(xpath = "//a[@href='http://ec2-34-235-10-165.compute-1.amazonaws.com']/ancestor::li")
+    private WebElement dashboardActiveButton;
 
     public WebElement getDashboardActiveButton() {
         return dashboardActiveButton;
     }
-    @FindBy(xpath = "//a[@href='http://ec2-34-198-2-13.compute-1.amazonaws.com']/ancestor::li")
-    private WebElement dashboardActiveButton;
-
 
     //Contractor Button
     public WebElement getContractorButton(){

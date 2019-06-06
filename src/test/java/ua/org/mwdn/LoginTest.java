@@ -115,10 +115,7 @@ public class LoginTest {
     }
 
     public static void login(WebDriver driver) throws MalformedURLException {
-
-
         loginPageHelper = new LoginPageHelper(driver);
-
         loginPageHelper.goToLoginPage();
         loginPageHelper.typeLogin();
         loginPageHelper.typePass();
